@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>AKstudio — Airbnb ROL/ROI Costa Rica</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#1B2B6B;--navy2:#243580;--navy-lt:#eef0f8;
+  --gold:#C9A96E;--gold2:#b8924f;--gold-lt:#fdf6ec;
+  --pale:#B8CCE8;--text:#2c3345;--muted:#6b7694;--faint:#9ea6bc;
+  --border:#dde1ee;--border2:#ececf4;--bg:#f5f6fa;--white:#ffffff;
+  --green:#2d8653;--green-bg:#eef7f2;--green-bd:#a8d9bf;
+  --amber:#b5720a;--amber-bg:#fef8ec;--amber-bd:#f0c96e;
+  --red:#c0392b;--red-bg:#fdf0ee;
+  --teal:#0e7490;
+  --r:10px;--rsm:6px;
+  --sh:0 2px 12px rgba(27,43,107,.08);
+  --sh-lg:0 4px 24px rgba(27,43,107,.13);
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--text);font-family:'Lato',sans-serif;font-size:14px;min-height:100vh;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{cursor:pointer;font-family:'Lato',sans-serif}
+
+/* HEADER */
+header{background:var(--white);border-bottom:1px solid var(--border);height:56px;display:flex;align-items:center;justify-content:space-between;padding:0 16px;position:sticky;top:0;z-index:200;box-shadow:0 1px 6px rgba(27,43,107,.07)}
+.logo-grp{display:flex;align-items:center;gap:10px}
+.logo-div{width:1px;height:24px;background:var(--border);display:none}
+.app-ttl{display:none}
+.hdr-lnk{display:none}
+.beta-pill{font-size:10px;font-weight:700;color:var(--amber);background:var(--amber-bg);border:1px solid var(--amber-bd);padding:3px 9px;border-radius:20px;white-space:nowrap}
+@media(min-width:768px){
+  header{height:62px;padding:0 28px}
+  .logo-div{display:block}
+  .app-ttl{display:block;font-family:'Raleway',sans-serif;font-size:13px;font-weight:700;color:var(--navy)}
+  .app-ttl span{display:block;font-size:9.5px;font-weight:400;color:var(--muted);letter-spacing:1.2px;text-transform:uppercase;margin-top:1px}
+  .hdr-lnk{display:flex;gap:10px;font-size:11.5px;color:var(--muted);align-items:center}
+  .hdr-lnk a:hover{color:var(--navy)}
+}
+
+/* HERO */
+.hero{background:linear-gradient(145deg,var(--navy) 0%,#243580 60%,#1e3272 100%);padding:28px 16px 32px;overflow:hidden;position:relative}
+.hero::after{content:'';position:absolute;right:-40px;top:-40px;width:200px;height:200px;border:30px solid rgba(201,169,110,.07);border-radius:50%;pointer-events:none}
+.hi{max-width:960px;margin:0 auto}
+.hero-ey{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:8px;font-weight:700}
+.hero-h1{font-family:'Raleway',sans-serif;font-size:24px;font-weight:800;color:white;margin-bottom:8px;line-height:1.2}
+.hero-h1 em{font-style:normal;color:var(--gold)}
+.hero-p{font-size:12.5px;color:rgba(255,255,255,.65);line-height:1.7;margin-bottom:20px}
+.hs{display:grid;grid-template-columns:1fr 1fr;border:1px solid rgba(255,255,255,.1);border-radius:var(--r);overflow:hidden;margin-bottom:16px}
+.hs-i{padding:10px 14px;text-align:center;border-right:1px solid rgba(255,255,255,.1);border-bottom:1px solid rgba(255,255,255,.1)}
+.hs-i:nth-child(2){border-right:none}
+.hs-i:nth-child(3){border-bottom:none}
+.hs-i:nth-child(4){border-right:none;border-bottom:none}
+.hs-n{font-family:'Raleway',sans-serif;font-size:17px;font-weight:800;color:var(--gold);line-height:1}
+.hs-l{font-size:9px;color:rgba(255,255,255,.5);letter-spacing:.8px;text-transform:uppercase;margin-top:3px}
+.roi-box{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:var(--rsm);padding:12px 16px;max-width:600px}
+.roi-box-title{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:6px}
+.roi-box p{font-size:12px;color:rgba(255,255,255,.7);line-height:1.7}
+@media(min-width:600px){
+  .hero{padding:36px 28px 40px}
+  .hero-h1{font-size:30px}
+  .hs{display:flex;width:auto;grid-template-columns:unset}
+  .hs-i{border-bottom:none!important;border-right:1px solid rgba(255,255,255,.1)!important}
+  .hs-i:last-child{border-right:none!important}
+}
+@media(min-width:768px){.hero-h1{font-size:clamp(26px,4vw,34px)}.hs-n{font-size:20px}}
+
+/* MAIN */
+main{max-width:960px;margin:0 auto;padding:16px 14px 100px}
+@media(min-width:768px){main{padding:24px 28px 60px}}
+
+/* FORM CARD */
+.fc{background:var(--white);border:1px solid var(--border);border-radius:var(--r);box-shadow:var(--sh-lg);padding:18px 16px;margin-bottom:16px}
+@media(min-width:768px){.fc{padding:28px 32px}}
+.sec-ttl{font-family:'Raleway',sans-serif;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--navy);margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid var(--border2);display:flex;align-items:center;gap:7px}
+.cg{display:grid;grid-template-columns:1fr;gap:14px;margin-bottom:16px}
+@media(min-width:480px){.cg{grid-template-columns:1fr 1fr}}
+@media(min-width:768px){.cg{grid-template-columns:repeat(3,1fr);gap:20px}}
+.cgl{display:flex;flex-direction:column;gap:8px}
+.clbl{font-size:10.5px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:var(--muted)}
+.clbl sup{color:var(--gold);font-size:9px}
+select{width:100%;min-height:48px;background:var(--bg);border:1.5px solid var(--border);border-radius:var(--rsm);color:var(--text);font-family:'Lato',sans-serif;font-size:14px;font-weight:700;padding:12px 36px 12px 14px;outline:none;transition:border-color .2s;cursor:pointer;-webkit-appearance:none;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%236b7694' d='M6 8L1 3h10z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center}
+select:focus{border-color:var(--navy)}
+@media(min-width:768px){select{min-height:44px;font-size:13px}}
+
+/* SEGMENT BUTTONS */
+.seg{display:flex;border:1.5px solid var(--border);border-radius:var(--rsm);overflow:hidden}
+.seg-b{flex:1;background:none;border:none;border-right:1px solid var(--border);padding:14px 4px;font-family:'Raleway',sans-serif;font-size:13px;font-weight:700;color:var(--muted);transition:all .15s;text-align:center;min-height:48px;cursor:pointer}
+.seg-b:last-child{border-right:none}
+.seg-b.on{background:var(--navy);color:white}
+.seg-b:active:not(.on){background:var(--navy-lt)}
+@media(min-width:768px){.seg-b{padding:10px 4px;min-height:42px;font-size:12px}}
+
+/* SLIDER */
+.slw{display:flex;flex-direction:column;gap:8px}
+.sld{font-family:'Raleway',sans-serif;font-size:24px;font-weight:800;color:var(--navy);text-align:center;line-height:1}
+.sld span{font-size:12px;font-weight:400;color:var(--muted)}
+input[type=range]{-webkit-appearance:none;width:100%;height:6px;border-radius:4px;background:var(--border);outline:none;cursor:pointer}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:26px;height:26px;border-radius:50%;background:var(--navy);border:3px solid white;box-shadow:0 1px 6px rgba(27,43,107,.3);cursor:pointer}
+input[type=range]::-moz-range-thumb{width:24px;height:24px;border-radius:50%;background:var(--navy);border:3px solid white;cursor:pointer}
+.sticks{display:flex;justify-content:space-between;font-size:9.5px;color:var(--faint)}
+@media(min-width:768px){.sld{font-size:20px}input[type=range]::-webkit-slider-thumb{width:18px;height:18px}}
+
+/* CALCULATE BUTTON */
+.calc-mob{position:fixed;bottom:0;left:0;right:0;background:var(--white);border-top:1px solid var(--border);padding:12px 16px calc(12px + env(safe-area-inset-bottom));z-index:150;box-shadow:0 -4px 16px rgba(27,43,107,.1)}
+.calc-desk{display:none}
+.btn-calc{width:100%;background:var(--navy);color:white;border:none;border-radius:var(--rsm);padding:16px 24px;font-family:'Raleway',sans-serif;font-size:15px;font-weight:800;letter-spacing:.5px;display:flex;align-items:center;justify-content:center;gap:10px;transition:all .15s;cursor:pointer}
+.btn-calc:active{background:var(--navy2);transform:scale(.98)}
+@media(min-width:768px){
+  .calc-mob{display:none}
+  .calc-desk{display:flex;align-items:flex-end;padding-bottom:2px}
+  .btn-calc{width:auto;padding:13px 32px;font-size:14px;display:inline-flex}
+  .btn-calc:hover{background:var(--navy2);transform:translateY(-1px)}
+}
+
+/* RESULTS */
+#res{display:none}
+#res.on{display:block;animation:up .35s ease both}
+@keyframes up{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+
+.disc{background:var(--amber-bg);border:1px solid var(--amber-bd);border-left:3px solid var(--gold2);border-radius:var(--rsm);padding:12px 14px;font-size:11.5px;color:var(--amber);line-height:1.65;margin-bottom:14px}
+.disc strong{color:var(--navy)}
+.rh{background:var(--white);border:1px solid var(--border);border-radius:var(--r);box-shadow:var(--sh);padding:16px;margin-bottom:12px}
+.rh-top{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.rh-t{font-family:'Raleway',sans-serif;font-size:16px;font-weight:800;color:var(--navy);line-height:1.3}
+.rh-s{font-size:11px;color:var(--muted);margin-top:4px;line-height:1.5}
+.pill{display:flex;align-items:center;gap:6px;padding:7px 12px;border-radius:20px;font-size:11px;font-weight:700;flex-shrink:0}
+.pill-g{background:var(--green-bg);color:var(--green);border:1px solid var(--green-bd)}
+.pill-dot{width:7px;height:7px;border-radius:50%;background:var(--green)}
+@media(min-width:768px){.rh-t{font-size:18px}}
+
+.tg{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px}
+@media(min-width:600px){.tg{grid-template-columns:repeat(4,1fr)}}
+.tile{background:var(--white);border:1px solid var(--border);border-radius:var(--rsm);padding:14px;box-shadow:0 1px 4px rgba(27,43,107,.04)}
+.tl{font-size:9.5px;letter-spacing:1px;text-transform:uppercase;color:var(--faint);margin-bottom:5px}
+.tv{font-family:'Raleway',sans-serif;font-size:19px;font-weight:800;color:var(--navy);line-height:1}
+.ts{font-size:10.5px;color:var(--muted);margin-top:4px}
+@media(min-width:768px){.tv{font-size:22px}}
+
+/* ROI BOX in results */
+.roi-res{background:var(--navy-lt);border:1px solid #c8cde8;border-left:3px solid var(--navy);border-radius:var(--rsm);padding:14px 16px;margin-bottom:12px}
+.roi-res-ttl{font-family:'Raleway',sans-serif;font-size:11px;font-weight:700;color:var(--navy);letter-spacing:.5px;margin-bottom:8px}
+.roi-res p{font-size:12px;color:var(--muted);line-height:1.7;margin-bottom:10px}
+.roi-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+.roi-tile{background:var(--white);border-radius:var(--rsm);padding:10px 12px;border:1px solid var(--border2);text-align:center}
+.roi-tile-lbl{color:var(--faint);font-size:9.5px;text-transform:uppercase;letter-spacing:.8px;margin-bottom:4px}
+.roi-tile-val{font-family:'Raleway',sans-serif;font-size:16px;font-weight:800}
+.roi-tile-sub{color:var(--muted);font-size:10px}
+
+/* SCENARIO SECTION */
+.ss{margin-bottom:12px}
+.ss-hd{background:var(--navy);color:white;padding:14px 16px;border-radius:var(--r) var(--r) 0 0;display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.ss-ht{font-family:'Raleway',sans-serif;font-size:13px;font-weight:700}
+.ss-hs{font-size:11px;opacity:.7;margin-top:2px}
+.s-leg{display:flex;gap:12px;flex-shrink:0}
+.s-li{display:flex;align-items:center;gap:5px;font-size:11px}
+.s-ld{width:8px;height:8px;border-radius:50%}
+.ld-a{background:var(--gold)}.ld-b{background:#22d3ee}
+
+/* Mobile: stacked cards */
+.scards{background:var(--white);border:1px solid var(--border);border-top:none;border-radius:0 0 var(--r) var(--r);overflow:hidden}
+.scard{padding:14px 16px;border-bottom:1px solid var(--border2)}
+.scard:last-child{border-bottom:none}
+.sc-hd{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;gap:8px;flex-wrap:wrap}
+.sc-nm{font-family:'Raleway',sans-serif;font-size:13px;font-weight:700;color:var(--text)}
+.sc-tot{font-family:'Raleway',sans-serif;font-size:16px;font-weight:800;color:var(--navy)}
+.sc-tot.best{color:var(--green)}
+.sc-2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.sc-r{background:var(--bg);border-radius:var(--rsm);padding:10px 12px;border:1px solid var(--border2)}
+.sc-rl{font-size:9px;letter-spacing:.8px;text-transform:uppercase;font-weight:700;margin-bottom:4px}
+.sc-rl.a{color:var(--gold2)}.sc-rl.b{color:var(--teal)}
+.sc-nt{font-size:10.5px;color:var(--muted);margin-bottom:2px}
+.sc-in{font-family:'Raleway',sans-serif;font-size:14px;font-weight:800}
+.sc-in.a{color:var(--gold2)}.sc-in.b{color:var(--teal)}
+.sc-pm{font-size:10px;color:var(--muted);margin-top:1px}
+.dbadge{display:inline-flex;align-items:center;font-size:10px;font-weight:700;padding:3px 8px;border-radius:4px;background:var(--navy-lt);color:var(--navy);margin-right:5px}
+.bbadge{font-size:9px;font-weight:700;padding:2px 7px;border-radius:4px;background:var(--green-bg);color:var(--green);border:1px solid var(--green-bd)}
+
+/* Desktop: table */
+.stw{display:none}
+@media(min-width:768px){
+  .scards{display:none}
+  .stw{display:block;background:var(--white);border:1px solid var(--border);border-top:none;border-radius:0 0 var(--r) var(--r);overflow-x:auto}
+  table{width:100%;border-collapse:collapse}
+  thead tr{background:var(--navy-lt)}
+  th{font-family:'Raleway',sans-serif;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--navy);padding:11px 14px;text-align:left;border-bottom:2px solid var(--border);white-space:nowrap}
+  td{padding:11px 14px;border-bottom:1px solid var(--border2);font-size:13px;white-space:nowrap}
+  tr:last-child td{border-bottom:none}
+  tr:hover td{background:#f9fafc}
+  .tdl{font-weight:700;color:var(--text)}
+  .tdn{color:var(--muted);font-size:12px}
+  .tda{color:var(--gold2);font-weight:700}
+  .tdb{color:var(--teal);font-weight:700}
+  .tdt{font-family:'Raleway',sans-serif;font-weight:800;color:var(--navy)}
+  .tdb2{color:var(--green)!important}
+  .tdm{color:var(--muted);font-size:11px}
+}
+
+/* OCC CARD */
+.oc{background:var(--white);border:1px solid var(--border);border-radius:var(--r);box-shadow:var(--sh);margin-bottom:12px;overflow:hidden}
+.ch{background:var(--navy);color:white;padding:12px 16px}
+.ch-t{font-family:'Raleway',sans-serif;font-size:12.5px;font-weight:700}
+.ch-s{font-size:11px;opacity:.7;margin-top:1px}
+.occ-tiles{padding:14px;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.ot{background:var(--bg);border:1px solid var(--border2);border-radius:var(--rsm);padding:12px 14px}
+.ot.full{grid-column:1/-1}
+.ot-s{font-size:12px;font-weight:700;color:var(--text);margin-bottom:2px}
+.ot-p{font-size:10px;color:var(--muted);margin-bottom:6px}
+.ot-r{font-family:'Raleway',sans-serif;font-size:22px;font-weight:800;color:var(--navy);line-height:1}
+.ot-n{font-size:11px;color:var(--muted);margin-top:3px}
+.ot-i{font-family:'Raleway',sans-serif;font-size:14px;font-weight:700;color:var(--navy);margin-top:4px}
+.ob{display:inline-flex;align-items:center;gap:4px;font-size:9.5px;font-weight:700;padding:3px 8px;border-radius:4px;margin-top:6px}
+.ob-h{background:var(--green-bg);color:var(--green);border:1px solid var(--green-bd)}
+.ob-m{background:var(--amber-bg);color:var(--amber);border:1px solid var(--amber-bd)}
+.ob-l{background:var(--red-bg);color:var(--red)}
+.otw{display:none}
+@media(min-width:768px){.occ-tiles{display:none}.otw{display:block;overflow-x:auto}}
+
+/* NOTES */
+.nc{background:var(--white);border:1px solid var(--border);border-radius:var(--r);box-shadow:var(--sh);padding:18px 16px;margin-bottom:12px}
+.nt2{display:grid;grid-template-columns:1fr;gap:12px}
+@media(min-width:640px){.nt2{grid-template-columns:1fr 1fr}}
+.nb{background:var(--bg);border-radius:var(--rsm);padding:13px 14px;font-size:12px;color:var(--muted);line-height:1.7;border:1px solid var(--border2)}
+.nb strong{color:var(--text);display:block;margin-bottom:5px;font-size:12.5px}
+.nl{list-style:none}
+.nl li{padding:3px 0;display:flex;gap:6px}
+.nl li::before{content:'·';color:var(--gold);font-weight:700;flex-shrink:0}
+
+/* CTA */
+.cta{background:linear-gradient(135deg,var(--navy),var(--navy2));border-radius:var(--r);padding:20px 18px;display:flex;flex-direction:column;gap:14px;margin-bottom:16px}
+.cta-t{font-family:'Raleway',sans-serif;font-size:15px;font-weight:700;color:white}
+.cta-s{font-size:12px;color:rgba(255,255,255,.65);margin-top:3px;line-height:1.6}
+.cta-btn{display:block;background:var(--gold);color:var(--navy);border:none;border-radius:var(--rsm);padding:13px 22px;font-family:'Raleway',sans-serif;font-size:13px;font-weight:800;letter-spacing:.5px;text-align:center;transition:background .15s;cursor:pointer}
+.cta-btn:active{background:var(--gold2);color:white}
+@media(min-width:640px){
+  .cta{flex-direction:row;align-items:center;justify-content:space-between;padding:22px 26px}
+  .cta-btn{white-space:nowrap;display:inline-block}
+  .cta-btn:hover{background:var(--gold2);color:white}
+}
+
+/* REF TABLE */
+.refc{background:var(--white);border:1px solid var(--border);border-radius:var(--r);box-shadow:var(--sh);margin-bottom:16px}
+.ref-hd{background:var(--navy-lt);padding:13px 16px;border-bottom:1px solid var(--border);border-radius:var(--r) var(--r) 0 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.ref-hd-t{font-family:'Raleway',sans-serif;font-size:12px;font-weight:700;color:var(--navy)}
+.ref-leg{display:flex;gap:12px;font-size:11px}
+.ref-bd{padding:14px}
+.ref-scr{display:flex;gap:12px;overflow-x:auto;padding-bottom:6px;-webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory}
+.ref-scr::-webkit-scrollbar{height:4px}
+.ref-scr::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px}
+.rz{background:var(--bg);border:1px solid var(--border2);border-radius:var(--rsm);padding:14px;min-width:220px;flex-shrink:0;scroll-snap-align:start}
+.rz-n{font-family:'Raleway',sans-serif;font-weight:700;font-size:13px;color:var(--navy);margin-bottom:2px}
+.rz-d{font-size:10px;color:var(--faint);margin-bottom:10px}
+.rr{display:flex;justify-content:space-between;align-items:center;padding:5px 0;border-bottom:1px solid var(--border2);font-size:12px}
+.rr:last-child{border-bottom:none}
+.rr-c{color:var(--muted)}
+.rp{display:flex;gap:8px}
+.rh2{color:var(--gold2);font-weight:700;font-size:11px}
+.rl2{color:var(--teal);font-weight:700;font-size:11px}
+.ref-fn{margin-top:12px;font-size:11px;color:var(--faint);line-height:1.6;background:var(--bg);border-radius:var(--rsm);padding:10px 12px;border:1px solid var(--border2)}
+@media(min-width:560px){
+  .ref-scr{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;overflow-x:visible;padding-bottom:0;scroll-snap-type:none}
+  .rz{min-width:unset}
+}
+@media(min-width:900px){.ref-scr{grid-template-columns:repeat(4,1fr)}}
+
+/* FOOTER */
+footer{background:var(--white);border-top:1px solid var(--border);padding:16px 16px calc(16px + env(safe-area-inset-bottom));display:flex;flex-direction:column;gap:10px;align-items:center;text-align:center}
+.fn{font-size:11px;color:var(--faint);line-height:1.5}
+.fl{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
+.fl a{font-size:11px;color:var(--faint)}
+.fl a:hover{color:var(--navy)}
+.fv{font-size:10px;font-family:monospace;color:var(--faint);background:var(--bg);border:1px solid var(--border2);padding:2px 8px;border-radius:4px}
+@media(min-width:640px){footer{flex-direction:row;justify-content:space-between;text-align:left;padding:18px 28px}.fl{justify-content:flex-start}}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="logo-grp">
+    <svg height="27" viewBox="0 0 210 44" xmlns="http://www.w3.org/2000/svg">
+      <text x="0" y="34" font-family="'Raleway',sans-serif" font-weight="800" font-size="36" fill="#1B2B6B">AK</text>
+      <text x="52" y="34" font-family="'Raleway',sans-serif" font-weight="300" font-size="36" fill="#C9A96E" letter-spacing="1">STUDIO</text>
+      <line x1="20" y1="39" x2="196" y2="39" stroke="#B8CCE8" stroke-width="0.8"/>
+      <text x="103" y="44" font-family="'Raleway',sans-serif" font-size="8" fill="#B8CCE8" letter-spacing="3" text-anchor="middle">ARQUITECTOS</text>
+    </svg>
+    <div class="logo-div"></div>
+    <div class="app-ttl">ROL / ROI Airbnb Calculator<span>Costa Rica · Guanacaste · Puntarenas · Limón · San Carlos</span></div>
+  </div>
+  <div style="display:flex;align-items:center;gap:12px">
+    <div class="beta-pill">&#9889; 2024&#8211;2025</div>
+    <div class="hdr-lnk">
+      <a href="https://akstudio.es" target="_blank" rel="noopener">akstudio.es &#8599;</a>
+      <span style="color:var(--border)">|</span>
+      <a href="mailto:info@akstudio.es" title="info@akstudio.es" style="font-size:18px;line-height:1;color:var(--muted);transition:color .15s" onmouseover="this.style.color='var(--navy)'" onmouseout="this.style.color='var(--muted)'">&#9993;</a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hi">
+    <div class="hero-ey">&#127464;&#127479; Costa Rica &middot; Airbnb Profitability</div>
+    <h1 class="hero-h1">Estimated ROL / ROI for your<br><em>Airbnb unit</em></h1>
+    <p class="hero-p">Estimate gross income by area, guest capacity, and rental days. Based on real 2024&#8211;2025 market data.</p>
+    <div class="hs">
+      <div class="hs-i"><div class="hs-n">$234</div><div class="hs-l">Avg./night CR</div></div>
+      <div class="hs-i"><div class="hs-n">43%</div><div class="hs-l">Avg. occupancy</div></div>
+      <div class="hs-i"><div class="hs-n">3 nts</div><div class="hs-l">Avg. stay</div></div>
+      <div class="hs-i"><div class="hs-n">33K+</div><div class="hs-l">Listings CR</div></div>
+    </div>
+    <div class="roi-box">
+      <div class="roi-box-title">&#128161; What are ROL and ROI?</div>
+      <p>
+        <strong style="color:white">ROL</strong> (Net Operating Return) = gross income generated by the property before taxes and expenses.<br>
+        <strong style="color:white">ROI</strong> (Return on Investment) = net profit percentage relative to invested capital.<br>
+        <strong style="color:var(--gold)">Fórmula: ROI = (Ingreso neto anual ÷ Inversión total) × 100</strong><br>
+        Example: a $150,000 property generating $18,000 net/year = <strong style="color:var(--gold)">ROI 12%</strong>.
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN -->
+<main>
+
+  <!-- FORM -->
+  <div class="fc">
+    <div class="sec-ttl">&#9881;&#65039; Calculation parameters</div>
+    <div class="cg">
+      <div class="cgl">
+        <div class="clbl">Area <sup>&#9733;</sup></div>
+        <select id="zona">
+          <optgroup label="&#127797; Guanacaste">
+            <option value="gua_premium">Guanacaste Premium &#8212; Tamarindo, Nosara, Papagayo</option>
+            <option value="gua_mid">Guanacaste Medium &#8212; Liberia, Coco, Potrero</option>
+            <option value="gua_low">Guanacaste Emergente &#8212; Hojancha, La Cruz, Tilarán</option>
+          </optgroup>
+          <optgroup label="&#127754; Puntarenas">
+            <option value="pun_premium">Puntarenas Premium &#8212; Manuel Antonio, Sta. Teresa</option>
+            <option value="pun_mid" selected>Puntarenas Medium &#8212; Jacó, Dominical, Uvita</option>
+            <option value="pun_low">Puntarenas Emergente &#8212; Osa, Montezuma, Golfito</option>
+          </optgroup>
+          <optgroup label="&#127755; Limón / Caribe">
+            <option value="lim_premium">Caribe Sur &#8212; Puerto Viejo, Cahuita, Manzanillo</option>
+            <option value="lim_mid">Caribe Centro &#8212; Cocles, Punta Uva, Tortuguero</option>
+            <option value="lim_low">Caribe Norte / Limón ciudad</option>
+          </optgroup>
+          <optgroup label="&#127755; Alajuela / Area Norte">
+            <option value="san_premium">San Carlos Premium &#8212; La Fortuna, Arenal, El Castillo</option>
+            <option value="san_mid">San Carlos Medium &#8212; Ciudad Quesada, Aguas Zarcas</option>
+          </optgroup>
+        </select>
+      </div>
+      <div class="cgl">
+        <div class="clbl">Property type</div>
+        <select id="tipo">
+          <option value="studio">&#128705; Studio / 1 cuarto</option>
+          <option value="casa2" selected>&#127968; Casa / Apto 2 hab.</option>
+          <option value="casa3">&#127969; Casa 3 hab.</option>
+          <option value="villa">&#127984; Villa / Lujo</option>
+        </select>
+      </div>
+      <div class="cgl">
+        <div class="clbl">Finishes</div>
+        <select id="acabados">
+          <option value="basico">Básico &#8212; estándar</option>
+          <option value="medio" selected>Medio &#8212; buena calidad</option>
+          <option value="alto">Alto &#8212; premium, vistas</option>
+        </select>
+      </div>
+    </div>
+    <div class="cg">
+      <div class="cgl">
+        <div class="clbl">Capacity</div>
+        <div class="seg">
+          <button class="seg-b on" data-cap="2">2 pers.</button>
+          <button class="seg-b" data-cap="4">4 pers.</button>
+          <button class="seg-b" data-cap="6">6 pers.</button>
+        </div>
+      </div>
+      <div class="cgl">
+        <div class="clbl">Rented days / week</div>
+        <div class="slw">
+          <div class="sld" id="dd">3 <span>days/week</span></div>
+          <input type="range" id="ds" min="1" max="7" value="3">
+          <div class="sticks"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span></div>
+        </div>
+      </div>
+      <div class="cgl calc-desk">
+        <div class="clbl">&nbsp;</div>
+        <button class="btn-calc" id="btnCalc">Calculate ROL / ROI &#8594;</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="res"></div>
+
+  <!-- REFERENCE TABLE -->
+  <div class="refc">
+    <div class="ref-hd">
+      <div class="ref-hd-t">&#128202; Reference price/night &#8212; CR 2024&#8211;2025</div>
+      <div class="ref-leg">
+        <span style="color:var(--gold2);font-weight:700">&#9728; High</span>
+        <span style="color:var(--teal);font-weight:700">&#127783; Low</span>
+      </div>
+    </div>
+    <div class="ref-bd">
+      <div class="ref-scr">
+        <div class="rz">
+          <div class="rz-n">&#127797; Guanacaste Premium</div>
+          <div class="rz-d">Tamarindo &middot; Nosara &middot; Papagayo &middot; Flamingo</div>
+          <div class="rr"><span class="rr-c">2 pers.</span><div class="rp"><span class="rh2">$120&#8211;$200</span><span class="rl2">$75&#8211;$140</span></div></div>
+          <div class="rr"><span class="rr-c">4 pers.</span><div class="rp"><span class="rh2">$180&#8211;$320</span><span class="rl2">$110&#8211;$210</span></div></div>
+          <div class="rr"><span class="rr-c">6 pers.</span><div class="rp"><span class="rh2">$280&#8211;$600+</span><span class="rl2">$160&#8211;$380</span></div></div>
+        </div>
+        <div class="rz">
+          <div class="rz-n">&#127797; Guanacaste Medium</div>
+          <div class="rz-d">Liberia &middot; Coco &middot; Potrero &middot; Carrillo</div>
+          <div class="rr"><span class="rr-c">2 pers.</span><div class="rp"><span class="rh2">$80&#8211;$150</span><span class="rl2">$50&#8211;$100</span></div></div>
+          <div class="rr"><span class="rr-c">4 pers.</span><div class="rp"><span class="rh2">$120&#8211;$240</span><span class="rl2">$75&#8211;$160</span></div></div>
+          <div class="rr"><span class="rr-c">6 pers.</span><div class="rp"><span class="rh2">$160&#8211;$350</span><span class="rl2">$100&#8211;$220</span></div></div>
+        </div>
+        <div class="rz">
+          <div class="rz-n">&#127797; Guanacaste Emergente</div>
+          <div class="rz-d">Hojancha &middot; La Cruz &middot; Nandayure &middot; Tilarán</div>
+          <div class="rr"><span class="rr-c">2 pers.</span><div class="rp"><span class="rh2">$55&#8211;$110</span><span class="rl2">$35&#8211;$75</span></div></div>
+          <div class="rr"><span class="rr-c">4 pers.</span><div class="rp"><span class="rh2">$80&#8211;$160</span><span class="rl2">$50&#8211;$110</span></div></div>
+          <div class="rr"><span class="rr-c">6 pers.</span><div class="rp"><span class="rh2">$120&#8211;$240</span><span class="rl2">$70&#8211;$150</span></div></div>
+        </div>
+        <div class="rz">
+          <div class="rz-n">&#127754; Puntarenas Premium</div>
+          <div class="rz-d">Manuel Antonio &middot; Santa Teresa &middot; Los Sueños</div>
+          <div class="rr"><span class="rr-c">2 pers.</span><div class="rp"><span class="rh2">$100&#8211;$200</span><span class="rl2">$65&#8211;$130</span></div></div>
+          <div class="rr"><span class="rr-c">4 pers.</span><div class="rp"><span class="rh2">$160&#8211;$320</span><span class="rl2">$100&#8211;$200</span></div></div>
+          <div class="rr"><span class="rr-c">6 pers.</span><div class="rp"><span class="rh2">$240&#8211;$500</span><span class="rl2">$140&#8211;$300</span></div></div>
+        </div>
+        <div class="rz">
+          <div class="rz-n">&#127754; Puntarenas Medium</div>
+          <div class="rz-d">Jacó &middot; Dominical &middot; Uvita &middot; Quepos</div>
+          <div class="rr"><span class="rr-c">2 pers.</span><div class="rp"><span class="rh2">$70&#8211;$140</span><span class="rl2">$45&#8211;$90</span></div></div>
+          <div class="rr"><span class="rr-c">4 pers.</span><div class="rp"><span class="rh2">$110&#8211;$230</span><span class="rl2">$65&#8211;$150</span></div></div>
+          <div class="rr"><span class="rr-c">6 pers.</span><div class="rp"><span class="rh2">$160&#8211;$350</span><span class="rl2">$95&#8211;$220</span></div></div>
+        </div>
+        <div class="rz">
+          <div class="rz-n">&#127755; Caribe Sur</div>
+          <div class="rz-d">Puerto Viejo &middot; Cahuita &middot; Manzanillo &middot; Punta Uva</div>
+          <div class="rr"><span class="rr-c">2 pers.</span><div class="rp"><span class="rh2">$65&#8211;$130</span><span class="rl2">$40&#8211;$85</span></div></div>
+          <div class="rr"><span class="rr-c">4 pers.</span><div class="rp"><span class="rh2">$90&#8211;$180</span><span class="rl2">$55&#8211;$120</span></div></div>
+          <div class="rr"><span class="rr-c">6 pers.</span><div class="rp"><span class="rh2">$130&#8211;$260</span><span class="rl2">$75&#8211;$160</span></div></div>
+        </div>
+        <div class="rz">
+          <div class="rz-n">&#127755; Caribe Centro</div>
+          <div class="rz-d">Cocles &middot; Tortuguero &middot; Bribri &middot; Sixaola</div>
+          <div class="rr"><span class="rr-c">2 pers.</span><div class="rp"><span class="rh2">$50&#8211;$95</span><span class="rl2">$32&#8211;$65</span></div></div>
+          <div class="rr"><span class="rr-c">4 pers.</span><div class="rp"><span class="rh2">$75&#8211;$145</span><span class="rl2">$48&#8211;$95</span></div></div>
+          <div class="rr"><span class="rr-c">6 pers.</span><div class="rp"><span class="rh2">$105&#8211;$200</span><span class="rl2">$65&#8211;$130</span></div></div>
+        </div>
+        <div class="rz">
+          <div class="rz-n">&#127755; Caribe Norte / Limón</div>
+          <div class="rz-d">Limón ciudad &middot; Moín &middot; Matina &middot; Guácimo</div>
+          <div class="rr"><span class="rr-c">2 pers.</span><div class="rp"><span class="rh2">$40&#8211;$65</span><span class="rl2">$28&#8211;$48</span></div></div>
+          <div class="rr"><span class="rr-c">4 pers.</span><div class="rp"><span class="rh2">$58&#8211;$95</span><span class="rl2">$40&#8211;$68</span></div></div>
+          <div class="rr"><span class="rr-c">6 pers.</span><div class="rp"><span class="rh2">$80&#8211;$130</span><span class="rl2">$55&#8211;$90</span></div></div>
+        </div>
+        <div class="rz">
+          <div class="rz-n">&#127755; San Carlos Premium</div>
+          <div class="rz-d">La Fortuna &middot; Arenal &middot; El Castillo &middot; Nuevo Arenal</div>
+          <div class="rr"><span class="rr-c">2 pers.</span><div class="rp"><span class="rh2">$90&#8211;$140</span><span class="rl2">$60&#8211;$95</span></div></div>
+          <div class="rr"><span class="rr-c">4 pers.</span><div class="rp"><span class="rh2">$140&#8211;$220</span><span class="rl2">$90&#8211;$145</span></div></div>
+          <div class="rr"><span class="rr-c">6 pers.</span><div class="rp"><span class="rh2">$190&#8211;$320</span><span class="rl2">$125&#8211;$210</span></div></div>
+        </div>
+        <div class="rz">
+          <div class="rz-n">&#127755; San Carlos Medium</div>
+          <div class="rz-d">Ciudad Quesada &middot; Aguas Zarcas &middot; Venecia</div>
+          <div class="rr"><span class="rr-c">2 pers.</span><div class="rp"><span class="rh2">$55&#8211;$90</span><span class="rl2">$38&#8211;$62</span></div></div>
+          <div class="rr"><span class="rr-c">4 pers.</span><div class="rp"><span class="rh2">$85&#8211;$135</span><span class="rl2">$58&#8211;$92</span></div></div>
+          <div class="rr"><span class="rr-c">6 pers.</span><div class="rp"><span class="rh2">$120&#8211;$185</span><span class="rl2">$82&#8211;$125</span></div></div>
+        </div>
+      </div>
+      <div class="ref-fn">&#128204; <strong>Sources:</strong> AirDNA &middot; El Financiero CR (nov 2024) &middot; La Nación CR (sep 2025) &middot; listados Airbnb.com/CR (mar 2026). High Pacífico: dic 15&#8211;abr 30. Caribe alta: jul&#8211;ago + dic&#8211;ene. San Carlos: flujo turístico constante.</div>
+    </div>
+  </div>
+
+</main>
+
+<!-- Mobile fixed button -->
+<div class="calc-mob">
+  <button class="btn-calc" id="btnCalcMob">Calculate ROL / ROI &#8594;</button>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:center">
+    <svg height="17" viewBox="0 0 160 38" xmlns="http://www.w3.org/2000/svg">
+      <text x="0" y="28" font-family="'Raleway',sans-serif" font-weight="800" font-size="30" fill="#1B2B6B">AK</text>
+      <text x="42" y="28" font-family="'Raleway',sans-serif" font-weight="300" font-size="30" fill="#C9A96E" letter-spacing="1">STUDIO</text>
+    </svg>
+    <span class="fn">Guideline estimate &middot; IVA 13% + Renta capital no incluidos</span>
+  </div>
+  <div class="fl">
+    <a href="mailto:info@akstudio.es">info@akstudio.es</a>
+    <a href="https://akstudio.es" target="_blank" rel="noopener">akstudio.es &#8599;</a>
+    <span class="fv">v2.1 &middot; 2025</span>
+  </div>
+</footer>
+
+<script>
+// ── DATA ────────────────────────────────────────────────
+var Z = {
+  gua_premium: { l:'Guanacaste Premium',     e:'🌵', d:'Tamarindo · Nosara · Sámara · Papagayo',         t:'High: dic 15–abr 30 + Semana Santa',              alta:{2:160,4:250,6:400}, baja:{2:105,4:160,6:260}, occ:{a:.68,b:.38}, sem:{a:20,b:32} },
+  gua_mid:     { l:'Guanacaste Medium',        e:'🌵', d:'Liberia · Playas del Coco · Potrero',            t:'High: dic 15–abr 30',                             alta:{2:110,4:175,6:240}, baja:{2:72, 4:115,6:155}, occ:{a:.62,b:.35}, sem:{a:20,b:32} },
+  gua_low:     { l:'Guanacaste Emergente',    e:'🌵', d:'Hojancha · La Cruz · Nandayure · Tilarán',      t:'High: dic 15–abr 30',                             alta:{2:78, 4:118,6:170}, baja:{2:52, 4:78, 6:110}, occ:{a:.52,b:.28}, sem:{a:20,b:32} },
+  pun_premium: { l:'Puntarenas Premium',      e:'🌊', d:'Manuel Antonio · Santa Teresa · Los Sueños',    t:'High: dic 15–abr 30 + jul–ago',                   alta:{2:150,4:240,6:360}, baja:{2:95, 4:150,6:220}, occ:{a:.65,b:.36}, sem:{a:20,b:32} },
+  pun_mid:     { l:'Puntarenas Medium',        e:'🌊', d:'Jacó · Dominical · Uvita · Herradura · Quepos', t:'High: dic 15–abr 30',                             alta:{2:100,4:165,6:240}, baja:{2:65, 4:107,6:155}, occ:{a:.60,b:.32}, sem:{a:20,b:32} },
+  pun_low:     { l:'Puntarenas Emergente',    e:'🌊', d:'Osa · Montezuma · Malpais · Golfito',           t:'High: dic 15–abr 30 + Semana Santa',              alta:{2:75, 4:120,6:170}, baja:{2:48, 4:78, 6:110}, occ:{a:.55,b:.28}, sem:{a:20,b:32} },
+  lim_premium: { l:'Caribe Sur',              e:'🌴', d:'Puerto Viejo · Cahuita · Manzanillo · Punta Uva',t:'High: jul–ago + dic–ene',                        alta:{2:95, 4:140,6:195}, baja:{2:60, 4:90, 6:125}, occ:{a:.58,b:.30}, sem:{a:16,b:36} },
+  lim_mid:     { l:'Caribe Centro',           e:'🌴', d:'Cocles · Tortuguero · Bribri',                  t:'High: jul–ago + dic–ene',                         alta:{2:70, 4:105,6:145}, baja:{2:45, 4:68, 6:95},  occ:{a:.50,b:.26}, sem:{a:16,b:36} },
+  lim_low:     { l:'Caribe Norte / Limón',    e:'🌴', d:'Limón ciudad · Moín · Matina',                  t:'High: jul–ago + dic–ene',                         alta:{2:50, 4:75, 6:100}, baja:{2:35, 4:52, 6:70},  occ:{a:.42,b:.22}, sem:{a:16,b:36} },
+  san_premium: { l:'San Carlos – La Fortuna', e:'🌋', d:'La Fortuna · Arenal · El Castillo · Nuevo Arenal',t:'High: dic–abr + jul–ago (flujo constante)',     alta:{2:110,4:170,6:240}, baja:{2:72, 4:115,6:160}, occ:{a:.65,b:.45}, sem:{a:20,b:32} },
+  san_mid:     { l:'San Carlos Medium',        e:'🌋', d:'Ciudad Quesada · Aguas Zarcas · Venecia',       t:'High: dic–abr + jul–ago',                         alta:{2:70, 4:110,6:150}, baja:{2:45, 4:72, 6:100}, occ:{a:.52,b:.35}, sem:{a:20,b:32} }
+};
+
+var TM = { studio:.75, casa2:1.0, casa3:1.3, villa:1.85 };
+var AM = { basico:.82, medio:1.0, alto:1.28 };
+var SC = [
+  { l:'Weekend',         d:2 },
+  { l:'3 días / semana',       d:3 },
+  { l:'Jue–Dom (4 días)',      d:4 },
+  { l:'5 días / semana',       d:5 },
+  { l:'6 días / semana',       d:6 },
+  { l:'Full week',       d:7, best:true }
+];
+var TL = { studio:'Studio/1 cuarto', casa2:'Casa 2 hab.', casa3:'Casa 3 hab.', villa:'Villa/Lujo' };
+var AL = { basico:'Básico', medio:'Medio', alto:'Alto' };
+
+// ── STATE ────────────────────────────────────────────────
+var selCap = 2;
+
+// ── INIT ─────────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', function() {
+
+  // Capacity buttons
+  var capBtns = document.querySelectorAll('.seg-b');
+  capBtns.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      capBtns.forEach(function(b) { b.classList.remove('on'); });
+      btn.classList.add('on');
+      selCap = parseInt(btn.getAttribute('data-cap'), 10);
+    });
+  });
+
+  // Slider
+  var slider = document.getElementById('ds');
+  var display = document.getElementById('dd');
+  slider.addEventListener('input', function() {
+    var v = slider.value;
+    display.innerHTML = v + ' <span>day' + (v > 1 ? 's' : '') + '/week</span>';
+  });
+
+  // Calculate buttons (both desktop and mobile)
+  document.getElementById('btnCalc').addEventListener('click', calcular);
+  document.getElementById('btnCalcMob').addEventListener('click', calcular);
+});
+
+// ── HELPERS ──────────────────────────────────────────────
+function fmt(n) {
+  return Math.round(n).toLocaleString('en-US');
+}
+
+function occBadge(r) {
+  if (r >= .55) return '<span class="ob ob-h">&#9899; High '   + Math.round(r*100) + '%</span>';
+  if (r >= .35) return '<span class="ob ob-m">&#9899; Medium '  + Math.round(r*100) + '%</span>';
+  return               '<span class="ob ob-l">&#9899; Low '   + Math.round(r*100) + '%</span>';
+}
+
+// ── MAIN CALC ─────────────────────────────────────────────
+function calcular() {
+  var zk   = document.getElementById('zona').value;
+  var tk   = document.getElementById('tipo').value;
+  var ak   = document.getElementById('acabados').value;
+  var days = parseInt(document.getElementById('ds').value, 10);
+  var cap  = selCap;
+
+  var z  = Z[zk];
+  var tm = TM[tk];
+  var am = AM[ak];
+
+  var pA = Math.round(z.alta[cap] * tm * am);
+  var pB = Math.round(z.baja[cap] * tm * am);
+  var sA = z.sem.a;
+  var sB = z.sem.b;
+
+  var nA  = days * sA;
+  var nB  = days * sB;
+  var rA  = pA * nA;
+  var rB  = pB * nB;
+  var tot = rA + rB;
+  var net = Math.round(tot * 0.97);
+
+  var mA = Math.round(rA / (sA / 4.345));
+  var mB = Math.round(rB / (sB / 4.345));
+
+  var occ_p = (z.occ.a * sA + z.occ.b * sB) / 52;
+
+  // ROI at 3 price points
+  var roi100 = (net / 100000 * 100).toFixed(1);
+  var roi150 = (net / 150000 * 100).toFixed(1);
+  var roi250 = (net / 250000 * 100).toFixed(1);
+
+  // Build scenario rows
+  var cardRows = '';
+  var tableRows = '';
+  for (var i = 0; i < SC.length; i++) {
+    var s = SC[i];
+    var na = s.d * sA, nb = s.d * sB;
+    var ra = pA * na,  rb = pB * nb;
+    var t  = ra + rb;
+    var ma = Math.round(ra / (sA / 4.345));
+    var mb = Math.round(rb / (sB / 4.345));
+    var bestCls = s.best ? ' best' : '';
+    var bestBdg = s.best ? '<span class="bbadge">&#11088; Máximo</span>' : '';
+
+    cardRows +=
+      '<div class="scard">' +
+        '<div class="sc-hd">' +
+          '<div><span class="dbadge">' + s.d + 'd/sem</span>' + bestBdg + '<span class="sc-nm">' + s.l + '</span></div>' +
+          '<div class="sc-tot' + bestCls + '">$' + fmt(t) + '</div>' +
+        '</div>' +
+        '<div class="sc-2">' +
+          '<div class="sc-r"><div class="sc-rl a">&#9728; Temp. High</div><div class="sc-nt">' + na + ' noches/año</div><div class="sc-in a">$' + fmt(ra) + '</div><div class="sc-pm">&#8776; $' + fmt(ma) + '/mes</div></div>' +
+          '<div class="sc-r"><div class="sc-rl b">&#127783; Temp. Low</div><div class="sc-nt">' + nb + ' noches/año</div><div class="sc-in b">$' + fmt(rb) + '</div><div class="sc-pm">&#8776; $' + fmt(mb) + '/mes</div></div>' +
+        '</div>' +
+      '</div>';
+
+    var rowStyle = s.best ? ' style="background:rgba(27,43,107,.03)"' : '';
+    tableRows +=
+      '<tr' + rowStyle + '>' +
+        '<td class="tdl">' + (s.best ? '&#11088; ' : '') + s.l + '</td>' +
+        '<td class="tdn">' + s.d + 'd</td>' +
+        '<td class="tdn">' + na + '</td>' +
+        '<td class="tda">$' + fmt(ra) + '</td>' +
+        '<td class="tdm">$' + fmt(ma) + '</td>' +
+        '<td class="tdn">' + nb + '</td>' +
+        '<td class="tdb">$' + fmt(rb) + '</td>' +
+        '<td class="tdm">$' + fmt(mb) + '</td>' +
+        '<td class="tdt' + (s.best ? ' tdb2' : '') + '">$' + fmt(t) + '</td>' +
+      '</tr>';
+  }
+
+  var html =
+    '<div class="disc">&#9888;&#65039; <strong>Guideline estimate.</strong> ROL bruto antes de IVA (13%), renta capital (15%) y gastos operativos. Los ingresos reales dependen de gestión, fotografía, reputación y demanda.</div>' +
+
+    '<div class="rh"><div class="rh-top">' +
+      '<div>' +
+        '<div class="rh-t">' + z.e + ' ' + z.l + ' &middot; ' + cap + ' pers. &middot; ' + days + ' días/sem</div>' +
+        '<div class="rh-s">' + z.d + ' &nbsp;&middot;&nbsp; ' + TL[tk] + ' &nbsp;&middot;&nbsp; Finishes ' + AL[ak] + '<br>' + z.t + '</div>' +
+      '</div>' +
+      '<div class="pill pill-g"><div class="pill-dot"></div>~$' + fmt(tot) + '<span style="font-weight:400;font-size:10px;margin-left:3px">/año bruto</span></div>' +
+    '</div></div>' +
+
+    '<div class="tg">' +
+      '<div class="tile"><div class="tl">Gross Annual ROL</div><div class="tv">$' + fmt(tot) + '</div><div class="ts">Before VAT and income tax</div></div>' +
+      '<div class="tile"><div class="tl">Host Net</div><div class="tv">$' + fmt(net) + '</div><div class="ts">Less 3% Airbnb fee</div></div>' +
+      '<div class="tile"><div class="tl">Noche &middot; High</div><div class="tv" style="color:var(--gold2)">$' + fmt(pA) + '</div><div class="ts">Temp. alta estimada</div></div>' +
+      '<div class="tile"><div class="tl">Noche &middot; Low</div><div class="tv" style="color:var(--teal)">$' + fmt(pB) + '</div><div class="ts">Temp. baja estimada</div></div>' +
+    '</div>' +
+
+    '<div class="roi-res">' +
+      '<div class="roi-res-ttl">&#128161; Estimated ROI by property value</div>' +
+      '<p>Ingreso neto anual estimado ($' + fmt(net) + ') sobre distintos valores de inversión:</p>' +
+      '<div class="roi-grid">' +
+        '<div class="roi-tile"><div class="roi-tile-lbl">Propiedad $100K</div><div class="roi-tile-val" style="color:var(--green)">' + roi100 + '%</div><div class="roi-tile-sub">Estimated ROI</div></div>' +
+        '<div class="roi-tile"><div class="roi-tile-lbl">Propiedad $150K</div><div class="roi-tile-val" style="color:var(--amber)">' + roi150 + '%</div><div class="roi-tile-sub">Estimated ROI</div></div>' +
+        '<div class="roi-tile"><div class="roi-tile-lbl">Propiedad $250K</div><div class="roi-tile-val" style="color:var(--navy)">' + roi250 + '%</div><div class="roi-tile-sub">Estimated ROI</div></div>' +
+      '</div>' +
+    '</div>' +
+
+    '<div class="ss">' +
+      '<div class="ss-hd">' +
+        '<div><div class="ss-ht">Scenarios by Rented Days / Week</div><div class="ss-hs">' + z.e + ' ' + z.l + ' &middot; ' + cap + ' personas &middot; ' + TL[tk] + '</div></div>' +
+        '<div class="s-leg"><div class="s-li"><div class="s-ld ld-a"></div>High</div><div class="s-li"><div class="s-ld ld-b"></div>Low</div></div>' +
+      '</div>' +
+      '<div class="scards">' + cardRows + '</div>' +
+      '<div class="stw"><table>' +
+        '<thead><tr>' +
+          '<th>Escenario</th><th>Días</th>' +
+          '<th>&#9728; Nights/year</th><th>&#9728; ROL High</th><th>&#9728; $/mes</th>' +
+          '<th>&#127783; Nights/year</th><th>&#127783; ROL Low</th><th>&#127783; $/mes</th>' +
+          '<th>&#128202; Total/Year</th>' +
+        '</tr></thead>' +
+        '<tbody>' + tableRows + '</tbody>' +
+      '</table></div>' +
+    '</div>' +
+
+    '<div class="oc">' +
+      '<div class="ch"><div class="ch-t">Market Occupancy &mdash; ' + z.e + ' ' + z.l + '</div><div class="ch-s">Average local rates &middot; market benchmark</div></div>' +
+      '<div class="occ-tiles">' +
+        '<div class="ot"><div class="ot-s">&#9728; Temporada High</div><div class="ot-p">' + z.t + '</div><div class="ot-r">' + Math.round(z.occ.a*100) + '%</div><div class="ot-n">&#8776; ' + Math.round(z.occ.a*30) + ' noches/mes</div><div class="ot-i">$' + fmt(Math.round(pA*z.occ.a*30)) + '/mes típico</div>' + occBadge(z.occ.a) + '</div>' +
+        '<div class="ot"><div class="ot-s">&#127783; Temporada Low</div><div class="ot-p">Rest of year</div><div class="ot-r">' + Math.round(z.occ.b*100) + '%</div><div class="ot-n">&#8776; ' + Math.round(z.occ.b*30) + ' noches/mes</div><div class="ot-i">$' + fmt(Math.round(pB*z.occ.b*30)) + '/mes típico</div>' + occBadge(z.occ.b) + '</div>' +
+        '<div class="ot full" style="background:var(--navy-lt);border-color:#c8cde8"><div class="ot-s">&#128202; Ocupación ponderada anual</div><div class="ot-r" style="color:var(--navy)">' + Math.round(occ_p*100) + '%</div><div style="font-size:11px;color:var(--muted);margin-top:3px">Promedio nacional Airbnb CR: &#126;43%</div>' + occBadge(occ_p) + '</div>' +
+      '</div>' +
+      '<div class="otw"><table>' +
+        '<thead><tr><th>Temporada</th><th>Período</th><th>Ocupación zona</th><th>Noches equiv./mes</th><th>Ingreso típico/mes</th><th>Nivel</th></tr></thead>' +
+        '<tbody>' +
+          '<tr><td class="tdl">&#9728; High</td><td class="tdn">' + z.t + '</td><td><strong>' + Math.round(z.occ.a*100) + '%</strong></td><td>' + Math.round(z.occ.a*30) + ' noches</td><td class="tdt">$' + fmt(Math.round(pA*z.occ.a*30)) + '</td><td>' + occBadge(z.occ.a) + '</td></tr>' +
+          '<tr><td class="tdl">&#127783; Low</td><td class="tdn">Rest of year</td><td><strong>' + Math.round(z.occ.b*100) + '%</strong></td><td>' + Math.round(z.occ.b*30) + ' noches</td><td class="tdt">$' + fmt(Math.round(pB*z.occ.b*30)) + '</td><td>' + occBadge(z.occ.b) + '</td></tr>' +
+          '<tr style="background:var(--navy-lt)"><td class="tdl" colspan="2">&#128202; Ponderada anual</td><td><strong>' + Math.round(occ_p*100) + '%</strong></td><td colspan="2" style="color:var(--muted);font-size:12px">Máx. observado: &#126;72% (Nosara alta) &middot; Nacional CR: &#126;43%</td><td>' + occBadge(occ_p) + '</td></tr>' +
+        '</tbody>' +
+      '</table></div>' +
+    '</div>' +
+
+    '<div class="nc"><div class="sec-ttl">&#128161; Costos y Obligaciones Fiscales</div>' +
+      '<div class="nt2">' +
+        '<div class="nb"><strong>Host tax obligations</strong><ul class="nl">' +
+          '<li>IVA 13% sobre el precio de hospedaje (incluirlo en el precio)</li>' +
+          '<li>Renta capital: 15% sobre ingresos brutos (deducción única 15%)</li>' +
+          '<li>Declaración mensual ante ATV (15 días hábiles)</li>' +
+          '<li>Registro obligatorio como contribuyente IVA</li>' +
+          '<li>Comisión Airbnb: &#126;3% deducida automáticamente</li>' +
+        '</ul></div>' +
+        '<div class="nb"><strong>Factors impacting real ROI</strong><ul class="nl">' +
+          '<li>Fotografía profesional &#8594; +20&#8211;35% tarifa y ocupación</li>' +
+          '<li>Superhost (rating &#8805;4.8) &#8594; +15&#8211;25% demand</li>' +
+          '<li>Piscina, A/C, vistas &#8594; +$30&#8211;$80/noche</li>' +
+          '<li>Limpieza: $30&#8211;$70/estadía &middot; Mantenimiento: &#126;5% ROL</li>' +
+          '<li>Caribe: temporada alta inversa al Pacífico</li>' +
+          '<li>2-night minimum recommended to reduce turnover</li>' +
+        '</ul></div>' +
+      '</div>' +
+    '</div>' +
+
+    '<div class="cta">' +
+      '<div><div class="cta-t">Planning an investment or renovation project?</div><div class="cta-s">AK Studio asesora sin costo inicial en diseño, permisos y viabilidad para unidades vacacionales en Costa Rica.</div></div>' +
+      '<a href="mailto:info@akstudio.es?subject=Consulta%20Inversion%20Airbnb%20CR" class="cta-btn">Contact AK Studio &#8594;</a>' +
+    '</div>';
+
+  var el = document.getElementById('res');
+  el.innerHTML = html;
+  el.className = 'on';
+  setTimeout(function() { el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 60);
+}
+</script>
+</body>
+</html>
